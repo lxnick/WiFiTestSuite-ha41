@@ -232,7 +232,13 @@ int main(int argc, char *argv[])
 
                     DPRINT_INFO(WFA_OUT, "last %x last-1  %x last-2 %x last-3 %x\n", cmdName[slen], cmdName[slen-1], cmdName[slen-2], cmdName[slen-3]);
 
+#ifdef RUN_SIGMA
+//#pragma message "----------> Compiling for Sigma"
                     xcCmdBuf[slen-3] = '\0';
+#else
+//#pragma message "----------> Compiling for Console"
+                    xcCmdBuf[slen-2] = '\0';
+#endif
 
                     if(gSock == -1)
                         {

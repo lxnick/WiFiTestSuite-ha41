@@ -47,7 +47,15 @@ MAKE=make
 
 #--- Nick, for compiling for HA41 (STA)
 # CFLAGS = -g -O2 -D_REENTRANT -Wall -I../inc
-CFLAGS = -g -O2 -D_REENTRANT -DWFA_STA_TB -Wall -I../inc
+# CFLAGS = -g -O2 -D_REENTRANT -DWFA_STA_TB  -Wall -I../inc
+
+#--- Nick, for running on Sigma (pading 3 characters), Putty (pading 2 characters) 
+# CFLAGS = -g -O2 -D_REENTRANT -DWFA_STA_TB  -Wall -I../inc
+ifdef RUN_SIGMA
+    CFLAGS = -g -O2 -D_REENTRANT -DWFA_STA_TB -DRUN_SIGMA -Wall -I../inc
+else
+    CFLAGS = -g -O2 -D_REENTRANT -DWFA_STA_TB  -Wall -I../inc
+endif
 
 DUTLIBS = ../lib/libwfa_dut.a -lpthread
 CALIBS = ../lib/libwfa_ca.a -lpthread
