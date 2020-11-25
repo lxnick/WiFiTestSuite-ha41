@@ -33,7 +33,9 @@
 #endif
 
 #define MAX_CMD_BUFF        1024
-#define MAX_PARMS_BUFF      640
+// Nick, device list structure larger than 656 bytes
+//#define MAX_PARMS_BUFF      640
+#define MAX_PARMS_BUFF      1000
 
 #define MAX_TRAFFIC_BUF_SZ  1536
 
