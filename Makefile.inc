@@ -15,7 +15,7 @@
 #
 #--- Nick, for compiling for HA41 (arm)
 #CC = gcc
-CC = arm-linux-gnueabi-gcc
+CC = arm-linux-gnueabi-gcc -fgnu89-inline
 LIB=lib
 DUT=dut
 CA=ca
